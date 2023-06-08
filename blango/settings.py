@@ -50,6 +50,7 @@ class Dev(Configuration):
         'django.contrib.messages',
         'django.contrib.staticfiles',
 
+        'blango_auth',
         'blog',
 
         'crispy_forms',
@@ -114,6 +115,7 @@ class Dev(Configuration):
     #     ),
     # }
 
+    AUTH_USER_MODEL = "blango_auth.User"
 
     # Password validation
     # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
