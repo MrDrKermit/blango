@@ -206,6 +206,12 @@ class Dev(Configuration):
         },
     }
 
+    # django-registration options
+    EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+    ACCOUNT_ACTIVATION_DAYS = 7
+    REGISTRATION_OPEN = True
+
+
 class Prod(Dev):
     DEBUG = values.BooleanValue(False)
     SECRET_KEY = values.SecretValue()
