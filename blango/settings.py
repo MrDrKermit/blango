@@ -65,6 +65,8 @@ class Dev(Configuration):
 
         'rest_framework',
         'rest_framework.authtoken',
+        # swagger
+        'drf_yasg',
     ]
 
     # allauth settings
@@ -246,6 +248,14 @@ class Dev(Configuration):
         "DEFAULT_PERMISSION_CLASSES": [
             "rest_framework.permissions.IsAuthenticatedOrReadOnly"
         ],
+    }
+
+    # swagger
+    SWAGGER_SETTINGS = {
+        "SECURITY_DEFINITIONS": {
+            "Token": {"type": "apiKey", "name": "Authorization", "in": "header"},
+            "Basic": {"type": "basic"},
+        }
     }
 
 
